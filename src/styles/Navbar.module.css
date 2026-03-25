@@ -1,0 +1,72 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--text);
+  text-decoration: none;
+}
+.logo img { border-radius: 6px; }
+
+.links {
+  display: flex;
+  gap: 28px;
+}
+.links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.links a:hover { color: var(--text); }
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.loginBtn {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.loginBtn:hover { color: var(--text); text-decoration: none; }
+
+.signupBtn {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.signupBtn:hover { background: var(--accent-hover); text-decoration: none; }
+
+@media (max-width: 640px) {
+  .links { display: none; }
+}
