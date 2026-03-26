@@ -12,6 +12,6 @@ export default defineConfig({
   },
   preview: {
     host: "0.0.0.0",
-    allowedHosts: ["onboarding.branddesk.in"]
+    allowedHosts: ["onboarding.branddesk.in", "branddeskonboardfe-production.up.railway.app"]
   }
 });
