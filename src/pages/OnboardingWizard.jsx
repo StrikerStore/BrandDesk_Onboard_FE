@@ -32,6 +32,7 @@ export default function OnboardingWizard() {
   const [error, setError] = useState('');
   const [brandId, setBrandId] = useState(null);
   const [shopifyConnected, setShopifyConnected] = useState(false);
+  const [isApproved, setIsApproved] = useState(false);
 
   // Grab token from URL on first load
   useEffect(() => {
@@ -96,12 +97,18 @@ export default function OnboardingWizard() {
   const [rejectionReason, setRejectionReason] = useState('');
 
   const mapStatusToStep = (s, brand) => {
-    if (brand?.brand_status === 'rejected') {
+    if (s === 'approved' || brand?.brand_status === 'approved') {
+      setStep(2);
+      setIsPending(true);
+      setRejectionReason('');
+      setIsApproved(true);
+      if (brand?.id) setBrandId(brand.id);
+    } else if (brand?.brand_status === 'rejected') {
       setStep(2);
       setIsPending(true);
       setRejectionReason(brand.rejection_reason || '');
       if (brand?.id) setBrandId(brand.id);
-    } else if (s === 'pending_approval' || s === 'approved') {
+    } else if (s === 'pending_approval') {
       setStep(2);
       setIsPending(true);
       setRejectionReason('');
@@ -170,7 +177,7 @@ export default function OnboardingWizard() {
 
         {step === 0 && <StepBrandDetails onBrandCreated={handleBrandCreated} setError={setError} />}
         {step === 1 && <StepConnectServices brandId={brandId} setBrandId={setBrandId} setError={setError} setStep={setStep} setIsPending={setIsPending} setShopifyConnected={setShopifyConnected} />}
-        {step === 2 && <StepPendingReview isPending={isPending} shopifyConnected={shopifyConnected} rejectionReason={rejectionReason} />}
+        {step === 2 && <StepPendingReview isPending={isPending} shopifyConnected={shopifyConnected} rejectionReason={rejectionReason} isApproved={isApproved} />}
       </div>
     </div>
   );
@@ -512,7 +519,33 @@ function StepConnectServices({ brandId, setBrandId, setError, setStep, setIsPend
 }
 
 /* ─── Step 2: Pending Review ─── */
-function StepPendingReview({ isPending, shopifyConnected, rejectionReason }) {
+function StepPendingReview({ isPending, shopifyConnected, rejectionReason, isApproved }) {
+  const dashboardUrl = import.meta.env.VITE_FRONTEND_URL || 'http://localhost:5173';
+
+  if (isApproved) {
+    return (
+      <>
+        <div style={{ textAlign: 'center', padding: '16px 0' }}>
+          <div style={{ fontSize: 48, marginBottom: 16 }}>✅</div>
+          <h2 className={styles.stepTitle}>You're Approved!</h2>
+          <p className={styles.stepDesc}>
+            Your brand has been approved and your workspace is ready. Head to your dashboard to start managing customer emails.
+          </p>
+          <a
+            href={`${dashboardUrl}?token=${localStorage.getItem('bd_token')}`}
+            style={{
+              display: 'inline-block', marginTop: 20, padding: '12px 32px',
+              background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', color: '#fff',
+              borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none',
+            }}
+          >
+            Go to Dashboard →
+          </a>
+        </div>
+      </>
+    );
+  }
+
   if (rejectionReason) {
     return (
       <>
