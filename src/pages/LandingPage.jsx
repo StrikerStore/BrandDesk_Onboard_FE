@@ -42,7 +42,7 @@ export default function LandingPage() {
   }, [authError]);
 
   const errorMessages = {
-    no_account:         'No account found with this email. Please sign up first.',
+    no_account:         'No account found with this email. Please sign up below to get started.',
     already_registered: 'This email is already registered. Please log in instead.',
     callback_failed:    'Something went wrong. Please try again.',
     no_workspace:       'Your account has no active workspace. Please contact support.',
