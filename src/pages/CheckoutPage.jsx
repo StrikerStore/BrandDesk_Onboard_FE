@@ -20,6 +20,7 @@ export default function CheckoutPage() {
   const [couponStatus, setCouponStatus] = useState(null); // null | 'validating' | 'valid' | 'invalid'
   const [couponData, setCouponData]     = useState(null);
   const [couponError, setCouponError]   = useState('');
+  const [customerGst, setCustomerGst]   = useState('');
 
   useEffect(() => {
     // Check if user is authenticated
@@ -71,6 +72,7 @@ export default function CheckoutPage() {
     try {
       const payload = { plan, cycle };
       if (couponStatus === 'valid' && couponCode.trim()) payload.coupon_code = couponCode.trim();
+      if (customerGst.trim()) payload.customer_gst = customerGst.trim();
       const { data } = await api.post('/api/subscriptions/initiate', payload);
 
       // Create hidden form and submit to PayU
@@ -150,20 +152,28 @@ export default function CheckoutPage() {
             <span style={{ color: 'var(--text-secondary)' }}>Billing</span>
             <span style={{ fontWeight: 600, textTransform: 'capitalize' }}>{cycle}</span>
           </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+            <span style={{ color: 'var(--text-secondary)' }}>Base Amount</span>
+            <span>₹{amount.toLocaleString('en-IN')}</span>
+          </div>
+          {couponData && (
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, color: '#16a34a' }}>
+              <span>Discount ({couponData.discount_type === 'percent' ? `${couponData.discount_value}%` : `₹${couponData.discount_value}`})</span>
+              <span>- ₹{(amount - couponData.final_amount).toLocaleString('en-IN')}</span>
+            </div>
+          )}
+          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, fontSize: 13, color: 'var(--text-muted)' }}>
+            <span>GST (18%)</span>
+            <span>₹{Math.round((couponData ? couponData.final_amount : amount) * 0.18).toLocaleString('en-IN')}</span>
+          </div>
           <div style={{ borderTop: '1px solid var(--border)', paddingTop: 8, display: 'flex', justifyContent: 'space-between' }}>
-            <span style={{ fontWeight: 600 }}>Total</span>
+            <span style={{ fontWeight: 600 }}>Total Payable</span>
             <span style={{ fontWeight: 800, fontSize: 18 }}>
-              {couponData ? (
-                <>
-                  <span style={{ textDecoration: 'line-through', color: 'var(--text-muted)', fontSize: 14, marginRight: 6 }}>₹{amount.toLocaleString('en-IN')}</span>
-                  ₹{couponData.final_amount.toLocaleString('en-IN')}
-                </>
-              ) : (
-                <>₹{amount.toLocaleString('en-IN')}</>
-              )}
+              ₹{Math.round((couponData ? couponData.final_amount : amount) * 1.18).toLocaleString('en-IN')}
               <span style={{ fontSize: 13, fontWeight: 400, color: 'var(--text-muted)' }}>/{cycle === 'monthly' ? 'mo' : 'yr'}</span>
             </span>
           </div>
+          <div style={{ fontSize: 10, color: 'var(--text-muted)', marginTop: 4 }}>Inclusive of 18% GST</div>
         </div>
 
         {/* Coupon code */}
@@ -193,6 +203,18 @@ export default function CheckoutPage() {
           <div style={{ marginBottom: 12, padding: '8px 12px', borderRadius: 'var(--radius)', background: '#fef2f2', color: '#dc2626', fontSize: 12 }}>{couponError}</div>
         )}
 
+        {/* GST Number (optional) */}
+        <div style={{ marginBottom: 16 }}>
+          <label style={{ fontSize: 12, fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: 6 }}>GSTIN (optional)</label>
+          <input
+            type="text"
+            placeholder="Enter your GST number for tax credit"
+            value={customerGst}
+            onChange={e => setCustomerGst(e.target.value.toUpperCase())}
+            style={{ width: '100%', padding: '8px 12px', borderRadius: 'var(--radius)', border: '1px solid var(--border)', fontSize: 13, textTransform: 'uppercase', boxSizing: 'border-box' }}
+          />
+        </div>
+
         {error && <div className={styles.error}>{error}</div>}
 
         {status === 'processing' ? (
@@ -202,7 +224,7 @@ export default function CheckoutPage() {
           </>
         ) : (
           <button className={styles.connectBtn} onClick={handlePay} disabled={status !== 'ready'}>
-            Pay ₹{(couponData?.final_amount || amount).toLocaleString('en-IN')} and Subscribe
+            Pay ₹{Math.round((couponData?.final_amount || amount) * 1.18).toLocaleString('en-IN')} and Subscribe
           </button>
         )}
 
