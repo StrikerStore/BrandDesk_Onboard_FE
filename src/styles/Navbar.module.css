@@ -115,27 +115,35 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
   z-index: 99;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.overlayVisible {
+  opacity: 1;
 }
 
 /* Mobile slide-in menu */
 .mobileMenu {
-  display: none;
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 280px;
   height: 100vh;
+  height: 100dvh;
   background: var(--bg);
   border-left: 1px solid var(--border);
   z-index: 105;
   padding: 80px 24px 32px;
-  transition: right 0.3s ease;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
 }
 .mobileMenuOpen {
-  right: 0;
+  transform: translateX(0);
 }
 
 .mobileLinks {
@@ -208,3 +216,4 @@
   .overlay { display: block; }
   .mobileMenu { display: flex; }
 }
+
