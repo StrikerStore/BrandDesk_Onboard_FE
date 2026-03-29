@@ -6,6 +6,8 @@ import PricingPage from './pages/PricingPage';
 import FAQPage from './pages/FAQPage';
 import PolicyPage from './pages/PolicyPage';
 import BookDemoPage from './pages/BookDemoPage';
+import ContactPage from './pages/ContactPage';
+import BlogPage from './pages/BlogPage';
 import OnboardingWizard from './pages/OnboardingWizard';
 import CheckoutPage from './pages/CheckoutPage';
 
@@ -26,9 +28,13 @@ export default function App() {
               <Route path="/pricing" element={<PricingPage />} />
               <Route path="/faq" element={<FAQPage />} />
               <Route path="/book-demo" element={<BookDemoPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/blog" element={<BlogPage />} />
               <Route path="/privacy" element={<PolicyPage type="privacy" />} />
               <Route path="/terms" element={<PolicyPage type="terms" />} />
               <Route path="/refund" element={<PolicyPage type="refund" />} />
+              <Route path="/cookies" element={<PolicyPage type="cookies" />} />
+              <Route path="/security" element={<PolicyPage type="security" />} />
             </Routes>
             <Footer />
           </>

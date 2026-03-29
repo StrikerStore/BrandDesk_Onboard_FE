@@ -77,7 +77,7 @@ Each integration only accesses data you explicitly authorize. You can revoke acc
 \u2022 After 30 days, all data is permanently and irreversibly deleted from our servers
 \u2022 Backups containing your data are purged within 60 days
 
-You can request immediate deletion at any time by contacting support@branddesk.in. We will process your request within 7 business days.`,
+You can request immediate deletion at any time by contacting branddesk@plexzuu.com. We will process your request within 7 business days.`,
       },
       {
         id: 'your-rights',
@@ -92,7 +92,7 @@ You can request immediate deletion at any time by contacting support@branddesk.i
 \u2022 Restrict: Request that we limit how we use your data
 \u2022 Withdraw Consent: Revoke consent for data processing at any time
 
-You can manage most of these directly from your Settings page. For formal requests, email support@branddesk.in. We respond to all requests within 30 days.`,
+You can manage most of these directly from your Settings page. For formal requests, email branddesk@plexzuu.com. We respond to all requests within 30 days.`,
       },
       {
         id: 'international',
@@ -106,7 +106,7 @@ By using BrandDesk, you consent to the transfer of your data to India for proces
         heading: "Children's Privacy",
         body: `BrandDesk is not intended for use by individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have inadvertently collected data from a child under 18, we will take steps to delete that information promptly.
 
-If you believe a child has provided us with personal information, please contact us at support@branddesk.in.`,
+If you believe a child has provided us with personal information, please contact us at branddesk@plexzuu.com.`,
       },
       {
         id: 'breach',
@@ -129,7 +129,7 @@ We maintain an incident response plan and conduct regular security assessments t
 \u2022 The "Last updated" date at the top of this page will be revised
 \u2022 Continued use of BrandDesk after changes constitutes acceptance of the updated policy
 
-For questions about this Privacy Policy, email support@branddesk.in.`,
+For questions about this Privacy Policy, email branddesk@plexzuu.com.`,
       },
     ],
   },
@@ -216,7 +216,7 @@ You may not:
 \u2022 Use our trademarks without written permission
 \u2022 Create derivative works based on the service
 
-We respect intellectual property rights and expect our users to do the same. If you believe any content on BrandDesk infringes your intellectual property, contact us at support@branddesk.in.`,
+We respect intellectual property rights and expect our users to do the same. If you believe any content on BrandDesk infringes your intellectual property, contact us at branddesk@plexzuu.com.`,
       },
       {
         id: 'data-ownership',
@@ -280,7 +280,7 @@ We may suspend or terminate your account if:
         heading: 'Dispute Resolution',
         body: `Any disputes arising from these Terms or the use of BrandDesk shall be resolved as follows:
 
-1. Informal Resolution: Contact us at support@branddesk.in. We will attempt to resolve the dispute informally within 30 days.
+1. Informal Resolution: Contact us at branddesk@plexzuu.com. We will attempt to resolve the dispute informally within 30 days.
 
 2. Arbitration: If informal resolution fails, the dispute shall be referred to binding arbitration in accordance with the Arbitration and Conciliation Act, 1996 (India).
 
@@ -341,7 +341,210 @@ We may assign these Terms in connection with a merger, acquisition, reorganizati
 
 If you disagree with updated Terms, you may terminate your account before the changes take effect.
 
-For questions about these Terms, email support@branddesk.in.`,
+For questions about these Terms, email branddesk@plexzuu.com.`,
+      },
+    ],
+  },
+
+  cookies: {
+    title: 'Cookie Policy',
+    lastUpdated: 'March 2026',
+    sections: [
+      {
+        id: 'what-are-cookies',
+        heading: 'What Are Cookies',
+        body: `Cookies are small text files that are placed on your device when you visit a website. They help websites remember your preferences, understand how you use the service, and improve your experience.
+
+BrandDesk uses cookies and similar technologies (such as local storage) to provide, secure, and improve our service.`,
+      },
+      {
+        id: 'cookies-we-use',
+        heading: 'Cookies We Use',
+        body: `We use the following types of cookies:
+
+Essential Cookies
+These cookies are necessary for the service to function. They enable core features such as authentication, session management, and security. You cannot opt out of essential cookies as the service will not work without them.
+
+\u2022 Authentication token \u2014 keeps you signed in across sessions (httpOnly, secure)
+\u2022 Session cookie \u2014 maintains your session state
+\u2022 CSRF protection \u2014 prevents cross-site request forgery attacks
+
+Functional Cookies
+These cookies remember your preferences and settings to provide a personalized experience.
+
+\u2022 Workspace selection \u2014 remembers your last active workspace
+\u2022 UI preferences \u2014 remembers sidebar state, view preferences, and filters
+
+Analytics Cookies
+These cookies help us understand how visitors interact with BrandDesk so we can improve the product.
+
+\u2022 Page views and navigation patterns
+\u2022 Feature usage frequency
+\u2022 Performance metrics and error tracking
+
+We do not use any advertising or tracking cookies. We do not participate in cross-site tracking or retargeting networks.`,
+      },
+      {
+        id: 'third-party-cookies',
+        heading: 'Third-Party Cookies',
+        body: `BrandDesk integrates with the following third-party services that may set their own cookies:
+
+\u2022 Google OAuth \u2014 sets cookies during the authentication flow to manage sign-in state
+\u2022 PayU Payment Gateway \u2014 sets cookies during the checkout process for payment security
+
+These third-party cookies are governed by the respective providers' cookie policies. We do not control how third parties use their cookies.`,
+      },
+      {
+        id: 'managing-cookies',
+        heading: 'Managing Cookies',
+        body: `You can manage cookies through your browser settings. Most browsers allow you to:
+
+\u2022 View what cookies are stored on your device
+\u2022 Delete individual or all cookies
+\u2022 Block cookies from specific or all websites
+\u2022 Set preferences for first-party vs. third-party cookies
+
+Please note that blocking essential cookies will prevent you from using BrandDesk, as authentication and security features depend on them.
+
+Browser-specific instructions:
+\u2022 Chrome: Settings > Privacy and Security > Cookies
+\u2022 Firefox: Settings > Privacy & Security > Cookies
+\u2022 Safari: Preferences > Privacy > Manage Website Data
+\u2022 Edge: Settings > Cookies and Site Permissions`,
+      },
+      {
+        id: 'data-retention-cookies',
+        heading: 'Cookie Retention',
+        body: `\u2022 Authentication cookies expire after 7 days
+\u2022 Session cookies expire when you close your browser
+\u2022 Functional cookies are retained for up to 1 year
+\u2022 Analytics cookies are retained for up to 1 year
+
+You can clear cookies at any time through your browser settings. Clearing authentication cookies will require you to sign in again.`,
+      },
+      {
+        id: 'updates-cookies',
+        heading: 'Updates to This Policy',
+        body: `We may update this Cookie Policy from time to time to reflect changes in our practices or for operational, legal, or regulatory reasons.
+
+When we make changes, we will update the "Last updated" date at the top of this page. We encourage you to review this policy periodically.
+
+For questions about our use of cookies, contact us at branddesk@plexzuu.com.`,
+      },
+    ],
+  },
+
+  security: {
+    title: 'Security',
+    lastUpdated: 'March 2026',
+    sections: [
+      {
+        id: 'overview',
+        heading: 'Our Commitment to Security',
+        body: `At BrandDesk, security is foundational to everything we build. We understand that you trust us with your customer data, email communications, and business information. We take that responsibility seriously.
+
+This page outlines the security measures we implement to protect your data and ensure the integrity of our platform.`,
+      },
+      {
+        id: 'infrastructure',
+        heading: 'Infrastructure Security',
+        body: `BrandDesk is hosted on Railway, backed by Google Cloud Platform infrastructure. Our infrastructure includes:
+
+\u2022 Encrypted data transmission \u2014 all data in transit is protected with TLS 1.2+ (HTTPS enforced)
+\u2022 Encrypted data at rest \u2014 sensitive credentials and OAuth tokens are encrypted using AES-256-GCM
+\u2022 Isolated environments \u2014 production, staging, and development environments are fully separated
+\u2022 Automated backups \u2014 database backups are performed regularly with point-in-time recovery
+\u2022 DDoS protection \u2014 infrastructure-level protection against distributed denial-of-service attacks
+\u2022 Rate limiting \u2014 API rate limits prevent abuse and brute-force attacks`,
+      },
+      {
+        id: 'application-security',
+        heading: 'Application Security',
+        body: `Our application implements multiple layers of security:
+
+Authentication & Access Control
+\u2022 JWT-based authentication with secure, httpOnly cookies
+\u2022 Google OAuth 2.0 integration \u2014 we never store your Google password
+\u2022 Role-based access control (Owner, Admin, Agent) at the workspace level
+\u2022 Workspace isolation \u2014 each workspace's data is logically separated; users cannot access other workspaces' data
+
+API Security
+\u2022 All API endpoints require authentication (except public pages)
+\u2022 CORS restrictions limit which domains can access the API
+\u2022 Input validation and parameterized queries prevent SQL injection
+\u2022 HMAC signature verification for webhook endpoints (Shopify, PayU)
+\u2022 Timing-safe comparison for cryptographic operations`,
+      },
+      {
+        id: 'data-protection',
+        heading: 'Data Protection',
+        body: `Your data is protected through multiple measures:
+
+\u2022 Encryption at rest \u2014 OAuth tokens (Gmail, Shopify) are encrypted using AES-256-GCM before storage
+\u2022 Encryption in transit \u2014 all communications use HTTPS/TLS 1.2+
+\u2022 Minimal data collection \u2014 we only collect data necessary to provide the service
+\u2022 No data selling \u2014 we never sell, rent, or share your data with third parties for marketing
+\u2022 Data isolation \u2014 workspace-scoped queries ensure strict data boundaries
+\u2022 Secure deletion \u2014 when you delete your account, all data is permanently removed within 30 days`,
+      },
+      {
+        id: 'payment-security',
+        heading: 'Payment Security',
+        body: `BrandDesk does not store, process, or transmit credit card or payment card data directly.
+
+\u2022 All payments are processed through PayU, a PCI-DSS compliant payment gateway
+\u2022 Payment webhooks are verified using SHA-512 hash signatures
+\u2022 Transaction integrity is validated with timing-safe cryptographic comparison
+\u2022 We only store transaction metadata (plan, amount, status) \u2014 never card details`,
+      },
+      {
+        id: 'third-party-integrations',
+        heading: 'Third-Party Integrations',
+        body: `We integrate with trusted third-party services and follow security best practices for each:
+
+\u2022 Google Gmail API \u2014 OAuth 2.0 with minimal scopes; we only access labels you explicitly authorize
+\u2022 Shopify API \u2014 access tokens are encrypted at rest; HMAC verification on all webhooks
+\u2022 OpenRouter AI \u2014 email content sent for AI processing is not stored or used for model training
+\u2022 PayU \u2014 PCI-DSS compliant payment processing; no card data touches our servers
+
+Each integration only accesses the minimum data required. You can revoke any integration from your Settings at any time.`,
+      },
+      {
+        id: 'security-headers',
+        heading: 'Security Headers',
+        body: `BrandDesk implements industry-standard HTTP security headers:
+
+\u2022 Strict-Transport-Security (HSTS) \u2014 enforces HTTPS connections
+\u2022 X-Content-Type-Options: nosniff \u2014 prevents MIME type sniffing
+\u2022 X-Frame-Options: DENY \u2014 prevents clickjacking attacks
+\u2022 X-XSS-Protection \u2014 enables browser XSS filtering
+\u2022 Referrer-Policy: strict-origin-when-cross-origin \u2014 controls referrer information
+\u2022 SameSite cookie attributes \u2014 prevents cross-site request forgery`,
+      },
+      {
+        id: 'incident-response',
+        heading: 'Incident Response',
+        body: `In the event of a security incident:
+
+\u2022 We will notify affected users via email within 72 hours of confirmed breach
+\u2022 We will report to relevant authorities as required by applicable law
+\u2022 We will provide clear information about the nature, scope, and impact of the incident
+\u2022 We will outline remediation steps and guidance for affected users
+
+We maintain an incident response plan and conduct regular security reviews to minimize risk.`,
+      },
+      {
+        id: 'responsible-disclosure',
+        heading: 'Responsible Disclosure',
+        body: `If you discover a security vulnerability in BrandDesk, we encourage you to report it responsibly.
+
+Please email branddesk@plexzuu.com with:
+
+\u2022 A description of the vulnerability
+\u2022 Steps to reproduce the issue
+\u2022 Any relevant screenshots or proof of concept
+
+We will acknowledge your report within 48 hours and work to resolve confirmed vulnerabilities promptly. We ask that you do not publicly disclose the vulnerability until we have had a reasonable opportunity to address it.`,
       },
     ],
   },
@@ -377,7 +580,7 @@ Monthly plans are not eligible for prorated refunds after the 7-day window. You 
         heading: 'How to Request a Refund',
         body: `To request a refund:
 
-1. Send an email to support@branddesk.in with the subject line "Refund Request"
+1. Send an email to branddesk@plexzuu.com with the subject line "Refund Request"
 2. Include the following information:
    \u2013 Your registered email address
    \u2013 Workspace name
@@ -396,7 +599,7 @@ Our support team will acknowledge your request within 24 hours and process it wi
 \u2022 Bank processing times may add an additional 3-5 business days depending on your financial institution
 \u2022 You will receive an email confirmation when the refund is initiated
 
-If you have not received your refund within 14 business days of approval, please contact support@branddesk.in.`,
+If you have not received your refund within 14 business days of approval, please contact branddesk@plexzuu.com.`,
       },
       {
         id: 'non-refundable',
@@ -439,7 +642,7 @@ You can cancel without requesting a refund, or request a refund which will also 
 \u2022 Extension of your current billing period at no additional cost
 \u2022 Full or partial refund at our discretion for severe or recurring outages
 
-Service credits are applied automatically when applicable. For specific outage-related concerns, contact support@branddesk.in.
+Service credits are applied automatically when applicable. For specific outage-related concerns, contact branddesk@plexzuu.com.
 
 We evaluate exception requests on a case-by-case basis and aim to be fair and transparent in all refund decisions.`,
       },
@@ -448,7 +651,7 @@ We evaluate exception requests on a case-by-case basis and aim to be fair and tr
         heading: 'Contact',
         body: `For any refund-related questions or disputes:
 
-\u2022 Email: support@branddesk.in
+\u2022 Email: branddesk@plexzuu.com
 \u2022 Subject line: "Refund Inquiry" or "Refund Request"
 \u2022 Response time: Within 24 hours on business days
 
