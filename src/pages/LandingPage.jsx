@@ -196,32 +196,34 @@ export default function LandingPage() {
           <p className={styles.sectionSubtitle}>
             Choose the plan that fits your team's needs. Upgrade anytime.
           </p>
-          <table className={styles.comparisonTable}>
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Trial</th>
-                <th className={styles.popularCol}>Starter</th>
-                <th>Pro</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style={{ fontWeight: 600 }}>
-                <td style={{ fontWeight: 600 }}>Price</td>
-                <td>Free</td>
-                <td className={styles.popularCol}>₹999/mo</td>
-                <td>₹2,499/mo</td>
-              </tr>
-              {COMPARISON_ROWS.map(row => (
-                <tr key={row.feature}>
-                  <td>{row.feature}</td>
-                  <td>{renderCell(row.trial)}</td>
-                  <td className={styles.popularCol}>{renderCell(row.starter)}</td>
-                  <td>{renderCell(row.pro)}</td>
+          <div className={styles.tableWrap}>
+            <table className={styles.comparisonTable}>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Trial</th>
+                  <th className={styles.popularCol}>Starter</th>
+                  <th>Pro</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <tr style={{ fontWeight: 600 }}>
+                  <td style={{ fontWeight: 600 }}>Price</td>
+                  <td>Free</td>
+                  <td className={styles.popularCol}>₹999/mo</td>
+                  <td>₹2,499/mo</td>
+                </tr>
+                {COMPARISON_ROWS.map(row => (
+                  <tr key={row.feature}>
+                    <td>{row.feature}</td>
+                    <td>{renderCell(row.trial)}</td>
+                    <td className={styles.popularCol}>{renderCell(row.starter)}</td>
+                    <td>{renderCell(row.pro)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
 

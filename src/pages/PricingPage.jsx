@@ -153,32 +153,34 @@ export default function PricingPage() {
         <div className={styles.comparisonSection}>
           <h2 className={styles.comparisonTitle}>Detailed feature comparison</h2>
           <p className={styles.comparisonSubtitle}>See exactly what each plan includes.</p>
-          <table className={styles.comparisonTable}>
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Trial</th>
-                <th className={styles.popularCol}>Starter</th>
-                <th>Pro</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className={styles.priceRow}>
-                <td style={{ fontWeight: 600 }}>Price</td>
-                <td>Free</td>
-                <td className={styles.popularCol}>{cycle === 'monthly' ? '₹999/mo' : '₹9,999/yr'}</td>
-                <td>{cycle === 'monthly' ? '₹2,499/mo' : '₹24,999/yr'}</td>
-              </tr>
-              {COMPARISON_ROWS.map(row => (
-                <tr key={row.feature}>
-                  <td>{row.feature}</td>
-                  <td>{renderCell(row.trial)}</td>
-                  <td className={styles.popularCol}>{renderCell(row.starter)}</td>
-                  <td>{renderCell(row.pro)}</td>
+          <div className={styles.tableWrap}>
+            <table className={styles.comparisonTable}>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Trial</th>
+                  <th className={styles.popularCol}>Starter</th>
+                  <th>Pro</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <tr className={styles.priceRow}>
+                  <td style={{ fontWeight: 600 }}>Price</td>
+                  <td>Free</td>
+                  <td className={styles.popularCol}>{cycle === 'monthly' ? '₹999/mo' : '₹9,999/yr'}</td>
+                  <td>{cycle === 'monthly' ? '₹2,499/mo' : '₹24,999/yr'}</td>
+                </tr>
+                {COMPARISON_ROWS.map(row => (
+                  <tr key={row.feature}>
+                    <td>{row.feature}</td>
+                    <td>{renderCell(row.trial)}</td>
+                    <td className={styles.popularCol}>{renderCell(row.starter)}</td>
+                    <td>{renderCell(row.pro)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         {/* Book a Demo CTA */}
         <div className={styles.demoCta}>
