@@ -65,6 +65,16 @@
 .lastUpdated {
   font-size: 14px;
   color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.intro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 12px 16px;
+  background: rgba(99, 102, 241, 0.04);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
   margin-bottom: 40px;
 }
 .section {

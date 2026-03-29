@@ -7,6 +7,7 @@ const POLICIES = {
   privacy: {
     title: 'Privacy Policy',
     lastUpdated: 'March 2026',
+    intro: 'BrandDesk is a subsidiary of PLEXZUU. This Privacy Policy describes how BrandDesk (operated by PLEXZUU) collects, uses, and protects your information.',
     sections: [
       {
         id: 'info-collect',
@@ -36,9 +37,28 @@ We also collect usage data such as page views, feature usage patterns, browser t
 We do not sell your data to third parties. We do not use your customer emails for advertising, marketing, or training AI models.`,
       },
       {
+        id: 'customer-data-protection',
+        heading: 'Customer Data Protection',
+        body: `BrandDesk, as a subsidiary of PLEXZUU, is committed to the highest standards of data protection. We want to be absolutely clear about our stance on customer data:
+
+\u2022 We do NOT use any kind of customer data for our own purposes — not for analytics, not for marketing, not for AI training, and not for any other reason
+\u2022 All customer data is fully encrypted at rest using AES-256-GCM encryption and in transit using TLS 1.2+
+\u2022 Customer email content, order information, and personal details are encrypted and secured at all times
+\u2022 We maintain strict data isolation between workspaces — no cross-workspace data access is possible
+\u2022 Our employees do not access customer data unless explicitly requested by you for troubleshooting purposes
+\u2022 All OAuth tokens and sensitive credentials are encrypted before storage
+
+Your customers' data belongs to you. We are merely a secure conduit that helps you manage your support operations. PLEXZUU and BrandDesk treat data privacy as a fundamental right, not a feature.`,
+      },
+      {
         id: 'data-storage',
         heading: 'Data Storage & Security',
-        body: `All data is encrypted in transit using HTTPS/TLS 1.2+. Sensitive credentials such as OAuth tokens are encrypted at rest. Each workspace's data is logically isolated \u2014 team members of one workspace cannot access another workspace's data.
+        body: `All data is fully encrypted and secured. BrandDesk (a PLEXZUU subsidiary) implements enterprise-grade security:
+
+\u2022 Encryption in transit: All data is encrypted using HTTPS/TLS 1.2+
+\u2022 Encryption at rest: All sensitive data, OAuth tokens, and customer information is encrypted using AES-256-GCM
+\u2022 Customer data is fully encrypted and secured at all times — we do not use any kind of customer data for any purpose beyond providing the service
+\u2022 Each workspace's data is logically isolated \u2014 team members of one workspace cannot access another workspace's data
 
 Gmail OAuth tokens are stored securely and scoped per workspace. We use Google's OAuth 2.0 protocol and never see or store your Google password.
 
@@ -141,7 +161,7 @@ For questions about this Privacy Policy, email branddesk@plexzuu.com.`,
       {
         id: 'acceptance',
         heading: 'Acceptance of Terms',
-        body: `By creating a BrandDesk account or using any part of the BrandDesk service, you agree to be bound by these Terms of Service ("Terms"). If you are using BrandDesk on behalf of a business or organization, you represent and warrant that you have the authority to bind that entity to these Terms.
+        body: `By creating a BrandDesk account or using any part of the BrandDesk service, you agree to be bound by these Terms of Service ("Terms"). BrandDesk is a subsidiary of PLEXZUU, and these Terms are entered into between you and PLEXZUU (operating through its subsidiary BrandDesk). If you are using BrandDesk on behalf of a business or organization, you represent and warrant that you have the authority to bind that entity to these Terms.
 
 If you do not agree to these Terms, you must not use the service.`,
       },
@@ -161,7 +181,7 @@ We reserve the right to suspend or terminate accounts that violate these Terms, 
       {
         id: 'service-description',
         heading: 'Service Description',
-        body: `BrandDesk is a customer support helpdesk platform designed for Shopify merchants. The service includes:
+        body: `BrandDesk, a subsidiary of PLEXZUU, is a customer support helpdesk platform designed for Shopify merchants. The service includes:
 
 \u2022 Gmail email synchronization and threading
 \u2022 Multi-brand workspace management
@@ -208,7 +228,7 @@ Payment processing is handled by PayU. By subscribing, you agree to PayU's terms
       {
         id: 'intellectual-property',
         heading: 'Intellectual Property',
-        body: `The BrandDesk platform, including its software, design, logos, and documentation, is the intellectual property of BrandDesk and is protected by copyright and trademark laws.
+        body: `The BrandDesk platform, including its software, design, logos, and documentation, is the intellectual property of PLEXZUU (operating through its subsidiary BrandDesk) and is protected by copyright and trademark laws.
 
 You may not:
 
@@ -221,16 +241,16 @@ We respect intellectual property rights and expect our users to do the same. If 
       {
         id: 'data-ownership',
         heading: 'Data Ownership',
-        body: `You own your data. BrandDesk does not claim ownership of your customer emails, brands, templates, analytics data, or any content you create or import.
+        body: `You own your data. BrandDesk (a subsidiary of PLEXZUU) does not claim ownership of your customer emails, brands, templates, analytics data, or any content you create or import.
 
-We may access your data only to:
+We do not use any kind of customer data for our own purposes. All customer data is fully encrypted and secured. We may access your data only to:
 
 \u2022 Provide the service as described
 \u2022 Fix bugs and resolve technical issues
 \u2022 Respond to your support requests
 \u2022 Comply with legal obligations
 
-We will never use your data for marketing, advertising, or any purpose not directly related to providing the service.`,
+We will never use your data for marketing, advertising, AI training, or any purpose not directly related to providing the service. Your customer data is fully encrypted at rest and in transit at all times.`,
       },
       {
         id: 'service-availability',
@@ -441,7 +461,9 @@ For questions about our use of cookies, contact us at branddesk@plexzuu.com.`,
       {
         id: 'overview',
         heading: 'Our Commitment to Security',
-        body: `At BrandDesk, security is foundational to everything we build. We understand that you trust us with your customer data, email communications, and business information. We take that responsibility seriously.
+        body: `At BrandDesk (a subsidiary of PLEXZUU), security is foundational to everything we build. We understand that you trust us with your customer data, email communications, and business information. We take that responsibility seriously.
+
+We want to be absolutely clear: BrandDesk does not use any kind of customer data for its own purposes. All customer data is fully encrypted and secured using industry-standard encryption protocols. PLEXZUU and BrandDesk treat your data privacy as a fundamental right.
 
 This page outlines the security measures we implement to protect your data and ensure the integrity of our platform.`,
       },
@@ -478,14 +500,17 @@ API Security
       {
         id: 'data-protection',
         heading: 'Data Protection',
-        body: `Your data is protected through multiple measures:
+        body: `BrandDesk (a PLEXZUU subsidiary) does not use any kind of customer data. Your data is fully encrypted and secured through multiple measures:
 
-\u2022 Encryption at rest \u2014 OAuth tokens (Gmail, Shopify) are encrypted using AES-256-GCM before storage
+\u2022 Encryption at rest \u2014 All customer data, OAuth tokens (Gmail, Shopify), and sensitive credentials are encrypted using AES-256-GCM before storage
 \u2022 Encryption in transit \u2014 all communications use HTTPS/TLS 1.2+
+\u2022 Zero data usage \u2014 we do NOT use any customer data for analytics, marketing, AI training, or any other purpose
 \u2022 Minimal data collection \u2014 we only collect data necessary to provide the service
-\u2022 No data selling \u2014 we never sell, rent, or share your data with third parties for marketing
+\u2022 No data selling \u2014 we never sell, rent, or share your data with third parties
 \u2022 Data isolation \u2014 workspace-scoped queries ensure strict data boundaries
-\u2022 Secure deletion \u2014 when you delete your account, all data is permanently removed within 30 days`,
+\u2022 Secure deletion \u2014 when you delete your account, all data is permanently removed within 30 days
+
+Your customers' data is their data. We are merely a secure platform that helps you manage your support operations.`,
       },
       {
         id: 'payment-security',
@@ -722,6 +747,7 @@ export default function PolicyPage({ type }) {
           <div className={styles.content}>
             <h1 className={styles.pageTitle}>{policy.title}</h1>
             <p className={styles.lastUpdated}>Last updated: {policy.lastUpdated}</p>
+            {policy.intro && <p className={styles.intro}>{policy.intro}</p>}
 
             {policy.sections.map(s => (
               <section key={s.id} id={s.id} className={styles.section}>

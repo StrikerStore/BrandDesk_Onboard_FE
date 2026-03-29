@@ -199,7 +199,7 @@ export default function LandingPage() {
       <section className={styles.ctaSection}>
         <div className="container">
           <h2 className={styles.sectionTitle}>Ready to streamline your support?</h2>
-          <p className={styles.ctaSectionSub}>Join merchants who save hours every week with BrandDesk.</p>
+          <p className={styles.ctaSectionSub}>Join merchants who save hours every week with BrandDesk, powered by PLEXZUU.</p>
           <a href={getGoogleSigninUrl('signup')} className={styles.ctaPrimaryDark}>
             <GoogleIcon />
             Get started free

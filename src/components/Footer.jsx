@@ -1,21 +1,36 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from '../styles/Footer.module.css';
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleFeaturesClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
           <div>
             <div className={styles.columnTitle}>Product</div>
-            <Link to="/#features" className={styles.link}>Features</Link>
+            <a href="/#features" onClick={handleFeaturesClick} className={styles.link}>Features</a>
             <Link to="/pricing" className={styles.link}>Pricing</Link>
             <Link to="/book-demo" className={styles.link}>Book a Demo</Link>
             <Link to="/faq" className={styles.link}>FAQ</Link>
           </div>
           <div>
             <div className={styles.columnTitle}>Company</div>
-            <Link to="/" className={styles.link}>About</Link>
+            <Link to="/about" className={styles.link}>About</Link>
             <Link to="/contact" className={styles.link}>Contact</Link>
             <Link to="/blog" className={styles.link}>Blog</Link>
           </div>
@@ -38,10 +53,10 @@ export default function Footer() {
         </div>
         <div className={styles.bottom}>
           <div className={styles.copyright}>
-            &copy; {new Date().getFullYear()} BrandDesk. All rights reserved.
+            &copy; {new Date().getFullYear()} BrandDesk by <a href="https://plexzuu.com" target="_blank" rel="noopener noreferrer" className={styles.parentLink}>PLEXZUU</a>. All rights reserved.
           </div>
           <div className={styles.brandLine}>
-            Built for Shopify merchants.
+            A subsidiary of PLEXZUU &middot; Built for Shopify merchants.
           </div>
         </div>
       </div>
