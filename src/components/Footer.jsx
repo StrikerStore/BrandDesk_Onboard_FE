@@ -32,7 +32,7 @@ export default function Footer() {
             <div className={styles.columnTitle}>Company</div>
             <Link to="/about" className={styles.link}>About</Link>
             <Link to="/contact" className={styles.link}>Contact</Link>
-            <Link to="/blog" className={styles.link}>Blog</Link>
+            <Link to="/blog" className={styles.link}>Blog <span className={styles.comingSoon}>Coming Soon</span></Link>
           </div>
           <div>
             <div className={styles.columnTitle}>Resources</div>

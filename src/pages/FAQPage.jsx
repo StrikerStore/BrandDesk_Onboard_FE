@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import styles from '../styles/FAQ.module.css';
 
 const FAQS = [
   {
     q: 'What is BrandDesk?',
-    a: 'BrandDesk is a customer support inbox built specifically for Shopify merchants. It connects to your Gmail, automatically imports customer emails, and gives you a clean dashboard to reply, track SLAs, and manage multiple brands.',
+    a: 'BrandDesk is a customer support inbox built specifically for Shopify merchants. It connects to your Gmail, automatically imports customer emails, and gives you a clean dashboard to reply, track SLAs, and manage multiple brands. BrandDesk is a subsidiary of PLEXZUU.',
   },
   {
     q: 'How does it connect to my email?',
@@ -19,7 +21,7 @@ const FAQS = [
   },
   {
     q: 'Is my data secure?',
-    a: 'Yes. All data is encrypted in transit (HTTPS) and isolated per workspace. We use Google OAuth — we never see or store your Google password. Each workspace\'s Gmail tokens are stored separately.',
+    a: 'Absolutely. BrandDesk (a PLEXZUU subsidiary) does not use any kind of customer data. All data is fully encrypted at rest using AES-256-GCM and in transit using TLS 1.2+. We use Google OAuth — we never see or store your Google password. Each workspace\'s data is logically isolated and Gmail tokens are stored separately and encrypted.',
   },
   {
     q: 'Can I invite team members?',
@@ -38,36 +40,55 @@ const FAQS = [
 export default function FAQPage() {
   const [open, setOpen] = useState(null);
 
+  useEffect(() => {
+    document.title = 'FAQ — BrandDesk by PLEXZUU';
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, []);
+
   return (
-    <main style={{ padding: '60px 0 80px' }}>
-      <div className="container" style={{ maxWidth: 700 }}>
-        <h1 style={{ fontSize: 36, fontWeight: 800, letterSpacing: -1, textAlign: 'center', marginBottom: 40 }}>
-          Frequently asked questions
-        </h1>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
-          {FAQS.map((faq, i) => (
-            <div key={i} style={{ borderBottom: '1px solid var(--border)' }}>
-              <button
-                onClick={() => setOpen(open === i ? null : i)}
-                style={{
-                  width: '100%', textAlign: 'left', padding: '18px 0',
-                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                  fontSize: 15, fontWeight: 600, color: 'var(--text)',
-                  background: 'none', border: 'none', cursor: 'pointer',
-                }}
-              >
-                {faq.q}
-                <span style={{ fontSize: 18, color: 'var(--text-muted)', flexShrink: 0, marginLeft: 16 }}>
-                  {open === i ? '−' : '+'}
-                </span>
-              </button>
-              {open === i && (
-                <div style={{ paddingBottom: 18, fontSize: 14, color: 'var(--text-secondary)', lineHeight: 1.7 }}>
-                  {faq.a}
+    <main className={styles.root}>
+      <div className="container">
+        <div className={styles.wrapper}>
+          <h1 className={styles.title}>Frequently asked questions</h1>
+          <p className={styles.subtitle}>
+            Everything you need to know about BrandDesk. Can't find the answer you're looking for? <Link to="/contact">Contact us</Link>.
+          </p>
+          <div className={styles.list} role="list">
+            {FAQS.map((faq, i) => {
+              const isOpen = open === i;
+              const panelId = `faq-panel-${i}`;
+              const buttonId = `faq-btn-${i}`;
+              return (
+                <div key={i} className={styles.item} role="listitem">
+                  <button
+                    id={buttonId}
+                    className={styles.question}
+                    onClick={() => setOpen(isOpen ? null : i)}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                  >
+                    {faq.q}
+                    <span className={`${styles.icon} ${isOpen ? styles.iconOpen : ''}`}>+</span>
+                  </button>
+                  <div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={buttonId}
+                    className={`${styles.answer} ${isOpen ? styles.answerOpen : ''}`}
+                  >
+                    <div className={styles.answerInner}>
+                      {faq.a}
+                    </div>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              );
+            })}
+          </div>
+
+          <div className={styles.cta}>
+            <p>Still have questions? We're happy to help.</p>
+            <Link to="/contact" className={styles.ctaLink}>Contact Us</Link>
+          </div>
         </div>
       </div>
     </main>

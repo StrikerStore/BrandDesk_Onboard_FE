@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
@@ -9,12 +10,14 @@ import BookDemoPage from './pages/BookDemoPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import AboutPage from './pages/AboutPage';
+import NotFoundPage from './pages/NotFoundPage';
 import OnboardingWizard from './pages/OnboardingWizard';
 import CheckoutPage from './pages/CheckoutPage';
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Standalone pages — no navbar/footer */}
         <Route path="/onboarding" element={<OnboardingWizard />} />
@@ -37,6 +40,7 @@ export default function App() {
               <Route path="/refund" element={<PolicyPage type="refund" />} />
               <Route path="/cookies" element={<PolicyPage type="cookies" />} />
               <Route path="/security" element={<PolicyPage type="security" />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
             <Footer />
           </>

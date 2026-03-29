@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Shield, Users, Zap, Heart, Lock, Globe } from 'lucide-react';
 import styles from '../styles/About.module.css';
@@ -48,6 +49,11 @@ const VALUES = [
 ];
 
 export default function AboutPage() {
+  useEffect(() => {
+    document.title = 'About — BrandDesk by PLEXZUU';
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, []);
+
   return (
     <main className={styles.root}>
       <div className="container">

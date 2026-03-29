@@ -691,6 +691,11 @@ export default function PolicyPage({ type }) {
   const [activeSection, setActiveSection] = useState(policy.sections[0]?.id || '');
 
   useEffect(() => {
+    document.title = `${policy.title} — BrandDesk by PLEXZUU`;
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, [policy.title]);
+
+  useEffect(() => {
     const handleScroll = () => {
       const sections = policy.sections.map(s => ({
         id: s.id,

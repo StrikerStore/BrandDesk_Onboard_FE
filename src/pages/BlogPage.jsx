@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const s = {
@@ -21,6 +22,10 @@ const s = {
 };
 
 export default function BlogPage() {
+  useEffect(() => {
+    document.title = 'Blog — BrandDesk by PLEXZUU';
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, []);
   return (
     <main style={s.root}>
       <div className="container">

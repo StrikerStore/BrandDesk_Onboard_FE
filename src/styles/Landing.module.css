@@ -152,6 +152,55 @@
   line-height: 1.7;
 }
 
+/* Social Proof / Trust Metrics */
+.socialProof {
+  padding: 48px 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+.metrics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.metric {
+  text-align: center;
+  padding: 16px 40px;
+}
+.metricValue {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.metricLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.metricDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.proofTagline {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 20px;
+}
+.proofTagline strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 /* Features */
 .features {
   padding: 100px 0;
@@ -367,4 +416,8 @@
   .comparisonTable { font-size: 12px; }
   .comparisonTable th, .comparisonTable td { padding: 10px 8px; }
   .integrationLogos { gap: 24px; }
+  .metric { padding: 12px 24px; }
+  .metricValue { font-size: 24px; }
+  .metricDivider { display: none; }
+  .metrics { gap: 8px; }
 }

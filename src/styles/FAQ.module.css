@@ -1,0 +1,129 @@
+/* FAQ Page */
+.root {
+  padding: 60px 0 80px;
+}
+
+.wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid var(--border);
+}
+
+.question {
+  width: 100%;
+  text-align: left;
+  padding: 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.question:hover {
+  color: var(--accent);
+}
+
+.icon {
+  font-size: 18px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 16px;
+  transition: transform 0.25s ease;
+}
+
+.iconOpen {
+  transform: rotate(45deg);
+}
+
+.answer {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+  max-height: 0;
+  opacity: 0;
+}
+
+.answerOpen {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.answerInner {
+  padding-bottom: 18px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* CTA at bottom */
+.cta {
+  text-align: center;
+  margin-top: 48px;
+  padding: 32px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.cta p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.ctaLink:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: 28px;
+  }
+}

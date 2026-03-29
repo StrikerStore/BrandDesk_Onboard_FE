@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../styles/BookDemo.module.css';
+import styles from '../styles/Contact.module.css';
 
 const EMPTY_FORM = {
   name: '',
@@ -14,6 +14,11 @@ export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Contact Us — BrandDesk by PLEXZUU';
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, []);
 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
@@ -112,8 +117,9 @@ export default function ContactPage() {
             <h2 className={styles.formTitle}>Send us a message</h2>
             <form onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
-                <label className={styles.label}>Your Name *</label>
+                <label className={styles.label} htmlFor="contact-name">Your Name *</label>
                 <input
+                  id="contact-name"
                   className={styles.input}
                   placeholder="Full name"
                   value={form.name}
@@ -123,8 +129,9 @@ export default function ContactPage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.label}>Email Address *</label>
+                <label className={styles.label} htmlFor="contact-email">Email Address *</label>
                 <input
+                  id="contact-email"
                   className={styles.input}
                   type="email"
                   placeholder="you@example.com"
@@ -135,8 +142,9 @@ export default function ContactPage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.label}>Subject</label>
+                <label className={styles.label} htmlFor="contact-subject">Subject</label>
                 <input
+                  id="contact-subject"
                   className={styles.input}
                   placeholder="What is this about?"
                   value={form.subject}
@@ -145,8 +153,9 @@ export default function ContactPage() {
               </div>
 
               <div className={styles.formGroup}>
-                <label className={styles.label}>Message *</label>
+                <label className={styles.label} htmlFor="contact-message">Message *</label>
                 <textarea
+                  id="contact-message"
                   className={styles.textarea}
                   placeholder="Tell us how we can help..."
                   value={form.message}
@@ -163,7 +172,12 @@ export default function ContactPage() {
                 className={styles.submitBtn}
                 disabled={submitting || !form.name.trim() || !form.email.trim() || !form.message.trim()}
               >
-                {submitting ? 'Sending...' : 'Send Message'}
+                {submitting ? (
+                  <>
+                    <span className={styles.spinner} />
+                    Sending...
+                  </>
+                ) : 'Send Message'}
               </button>
 
               <p className={styles.note}>

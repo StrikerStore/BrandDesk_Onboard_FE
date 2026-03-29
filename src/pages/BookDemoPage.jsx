@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { submitDemoRequest } from '../utils/api';
 import styles from '../styles/BookDemo.module.css';
@@ -32,6 +32,11 @@ export default function BookDemoPage() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    document.title = 'Book a Demo — BrandDesk by PLEXZUU';
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, []);
 
   const handleChange = (field, value) => {
     setForm(prev => ({ ...prev, [field]: value }));
@@ -228,7 +233,12 @@ export default function BookDemoPage() {
                 className={styles.submitBtn}
                 disabled={submitting || !form.brand_name.trim() || !form.contact_name.trim() || !form.contact_email.trim() || !form.platform}
               >
-                {submitting ? 'Submitting...' : 'Request a Demo'}
+                {submitting ? (
+                  <>
+                    <span className={styles.spinner} />
+                    Submitting...
+                  </>
+                ) : 'Request a Demo'}
               </button>
 
               <p className={styles.note}>

@@ -93,6 +93,36 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Social Proof / Trust Metrics */}
+      <section className={styles.socialProof}>
+        <div className="container">
+          <div className={styles.metrics}>
+            <div className={styles.metric}>
+              <div className={styles.metricValue}>10,000+</div>
+              <div className={styles.metricLabel}>Tickets Resolved</div>
+            </div>
+            <div className={styles.metricDivider} />
+            <div className={styles.metric}>
+              <div className={styles.metricValue}>50+</div>
+              <div className={styles.metricLabel}>Brands Managed</div>
+            </div>
+            <div className={styles.metricDivider} />
+            <div className={styles.metric}>
+              <div className={styles.metricValue}>99.9%</div>
+              <div className={styles.metricLabel}>Uptime</div>
+            </div>
+            <div className={styles.metricDivider} />
+            <div className={styles.metric}>
+              <div className={styles.metricValue}>&lt;2 min</div>
+              <div className={styles.metricLabel}>Avg. Setup Time</div>
+            </div>
+          </div>
+          <p className={styles.proofTagline}>
+            Trusted by Shopify merchants worldwide &middot; Backed by <strong>PLEXZUU</strong>
+          </p>
+        </div>
+      </section>
+
       {/* Features */}
       <section id="features" className={styles.features}>
         <div className="container">

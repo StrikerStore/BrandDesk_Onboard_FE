@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar } from 'lucide-react';
 import { getGoogleSigninUrl } from '../utils/api';
@@ -86,6 +86,11 @@ function renderCell(val) {
 
 export default function PricingPage() {
   const [cycle, setCycle] = useState('monthly');
+
+  useEffect(() => {
+    document.title = 'Pricing — BrandDesk by PLEXZUU';
+    return () => { document.title = 'BrandDesk — Customer Support for Shopify'; };
+  }, []);
 
   return (
     <main className={styles.root}>
